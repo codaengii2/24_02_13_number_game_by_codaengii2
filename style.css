@@ -166,4 +166,10 @@ button:nth-child(1) {
   .numBox {
     padding: 40px 40px;
   }
+
+  .numInput {
+    font-size: 14px;
+    border-radius: 10px;
+    height: auto;
+  }
 }
