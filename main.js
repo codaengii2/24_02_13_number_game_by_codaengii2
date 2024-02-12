@@ -83,20 +83,29 @@ const play = () => {
 };
 
 const reset = () => {
-  numInput.value = "";
-  chanceArea.textContent = "";
-  chanceNum = 7;
-  bunnyImage.src =
-    "https://i.pinimg.com/originals/0c/19/ae/0c19ae9544c73425bb8002406b97b9bb.gif";
-  resultArea.textContent = `정답은 ${answerNum}이었다구~`;
-  setTimeout(() => {
+  if (answerNum == numInput.value) {
+    numInput.value = "";
+    chanceArea.textContent = "";
+    chanceNum = 7;
     pickRandom();
     resultArea.textContent = `처음부터 다시 시작!`;
-    chanceArea.textContent = "기회는 총 3번!";
+    chanceArea.textContent = "기회는 총 7번!";
     bunnyImage.src =
       "https://i.pinimg.com/originals/63/80/4c/63804c1e29b9bd807be9db3a539d5102.gif";
     playBtn.disabled = false;
-  }, 2000);
+  } else {
+    bunnyImage.src =
+      "https://i.pinimg.com/originals/0c/19/ae/0c19ae9544c73425bb8002406b97b9bb.gif";
+    resultArea.textContent = `정답은 ${answerNum}이었다구~`;
+    setTimeout(() => {
+      pickRandom();
+      resultArea.textContent = `처음부터 다시 시작!`;
+      chanceArea.textContent = "기회는 총 7번!";
+      bunnyImage.src =
+        "https://i.pinimg.com/originals/63/80/4c/63804c1e29b9bd807be9db3a539d5102.gif";
+      playBtn.disabled = false;
+    }, 3000);
+  }
 };
 //3. 리셋 버튼 누르면 게임 다시 시작
 
