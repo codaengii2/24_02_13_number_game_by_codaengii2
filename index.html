@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <script src="main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="container">
+        <div class="resultBox">
+          <h2>숫자 맞추기 게임</h2>
+          <div class="character">
+            <img
+              src="https://i.pinimg.com/originals/63/80/4c/63804c1e29b9bd807be9db3a539d5102.gif"
+              alt="토끼"
+              loop="infinite"
+              id="bunnyImage"
+            />
+          </div>
+          <div class="resultArea">
+            두구두구 두궁!<br />
+            나는 무슨 숫자를 생각 중일까?
+          </div>
+          <div class="chanceArea">기회는 총 7번!</div>
+        </div>
+
+        <div class="numBox">
+          <input
+            type="number"
+            placeholder="1-100까지 숫자를 입력해보세요"
+            class="numInput"
+            onkeyup="enter(event)"
+          />
+
+          <div class="buttonBox">
+            <button id="resetBtn">Reset!</button>
+            <button id="playBtn">Go!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
 </html>
