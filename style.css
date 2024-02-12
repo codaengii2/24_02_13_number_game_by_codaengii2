@@ -70,7 +70,6 @@ body {
 
 .numBox {
   width: 100%;
-  height: 30%;
   background-color: #f5eee6;
   border-radius: 30px;
   display: flex;
@@ -91,7 +90,7 @@ body {
   box-shadow: 1px 3px 3px #b9b9b9;
   font-family: "Cafe24Ssurround";
   padding: 0 10px;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 }
 
 .buttonBox {
@@ -131,17 +130,32 @@ button:nth-child(1) {
   margin-right: 20px;
 }
 
-@media (max-width: 930px) {
+@media (max-width: 920px) {
   .container {
     width: 70%;
   }
 
+  .character {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #bunnyImage {
+    width: 80%;
+  }
+
   .numBox {
     padding: 50px;
+    height: auto;
+  }
+
+  .numInput {
+    margin-bottom: 30px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 580px) {
   .container {
     width: 90%;
     height: 75vh;
@@ -164,21 +178,23 @@ button:nth-child(1) {
   }
 
   .resultArea {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 30px;
   }
 
   .chanceArea {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .numBox {
     padding: 25px;
+    height: auto;
   }
 
   .numInput {
     font-size: 14px;
     border-radius: 10px;
     height: 40px;
+    margin-bottom: 20px;
   }
 }
