@@ -94,6 +94,7 @@ const reset = () => {
       "https://i.pinimg.com/originals/63/80/4c/63804c1e29b9bd807be9db3a539d5102.gif";
     playBtn.disabled = false;
   } else {
+    chanceArea.textContent = "";
     bunnyImage.src =
       "https://i.pinimg.com/originals/0c/19/ae/0c19ae9544c73425bb8002406b97b9bb.gif";
     resultArea.textContent = `정답은 ${answerNum}이었다구~`;
