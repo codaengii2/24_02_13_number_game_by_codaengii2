@@ -40,7 +40,7 @@ body {
   /* background-color: aliceblue; */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .resultBox {
@@ -54,6 +54,7 @@ body {
   color: #222;
   font-size: 30px;
   font-weight: 500;
+  margin-bottom: 50px;
 }
 
 .resultArea {
@@ -90,6 +91,7 @@ body {
   box-shadow: 1px 3px 3px #b9b9b9;
   font-family: "Cafe24Ssurround";
   padding: 0 10px;
+  margin-bottom: 10px;
 }
 
 .buttonBox {
@@ -143,8 +145,24 @@ button:nth-child(1) {
   .container {
     width: 90%;
   }
+  .resultBox {
+    height: 58%;
+  }
+
+  .resultBox h2 {
+    font-size: 20px;
+  }
+
+  .resultArea {
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .chanceArea {
+    font-size: 14px;
+  }
 
   .numBox {
-    padding: 50px 40px;
+    padding: 40px 40px;
   }
 }
