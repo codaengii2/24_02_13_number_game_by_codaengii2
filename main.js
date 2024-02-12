@@ -88,7 +88,7 @@ const reset = () => {
     chanceArea.textContent = "";
     chanceNum = 7;
     pickRandom();
-    resultArea.textContent = `처음부터 다시 시작!`;
+    resultArea.textContent = `토끼는 무슨 숫자를 생각 중일까?`;
     chanceArea.textContent = "기회는 총 7번!";
     bunnyImage.src =
       "https://i.pinimg.com/originals/63/80/4c/63804c1e29b9bd807be9db3a539d5102.gif";
