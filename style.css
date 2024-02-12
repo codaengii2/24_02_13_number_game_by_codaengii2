@@ -144,11 +144,18 @@ button:nth-child(1) {
 @media (max-width: 600px) {
   .container {
     width: 90%;
-    height: 70vh;
   }
   .resultBox {
-    margin-top: 50px;
-    height: 58%;
+    height: 50%;
+  }
+
+  .character {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #bunnyImage {
+    width: 60%;
   }
 
   .resultBox h2 {
@@ -165,8 +172,7 @@ button:nth-child(1) {
   }
 
   .numBox {
-    padding: 30px;
-    height: 25%;
+    padding: 25px;
   }
 
   .numInput {
