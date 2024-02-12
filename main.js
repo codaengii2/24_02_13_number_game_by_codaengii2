@@ -63,6 +63,8 @@ const play = () => {
     resultArea.textContent = "와 정답~!";
     bunnyImage.src =
       "https://i.pinimg.com/originals/40/07/88/40078804b28345218c35e6a322e49887.gif";
+    chanceNum = 7;
+    chanceArea.textContent = "";
     gameOver = true;
   }
   //2. 랜덤 숫자를 입력한 후 playbtn 누르면 up down 정답 표시하기
