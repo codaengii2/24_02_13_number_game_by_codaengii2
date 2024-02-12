@@ -146,6 +146,7 @@ button:nth-child(1) {
     width: 90%;
   }
   .resultBox {
+    margin-top: 50px;
     height: 58%;
   }
 
