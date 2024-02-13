@@ -22,6 +22,11 @@ const pickRandom = () => {
 //1. 랜덤숫자 나오기
 
 const play = () => {
+  // if (window.event.keyCode == 13) {
+  //   event.preventDefault();
+  // }
+  //엔터키 구현은 보류
+
   let inputValue = numInput.value;
 
   if (!inputValue) {
@@ -30,6 +35,7 @@ const play = () => {
     resultArea.textContent = "음? 얼른 입력해봐!";
     return;
   }
+  //아무것도 안적었을 때
 
   if (inputValue < 1 || inputValue > 100) {
     bunnyImage.src =
@@ -37,8 +43,9 @@ const play = () => {
     resultArea.textContent = "1부터 100 중에 입력해야돼!";
     return;
   }
+  //1-100 사이의 번호가 아닐 떄
 
-  if (answerAll == inputValue) {
+  if (answerAll.includes(inputValue)) {
     bunnyImage.src =
       "https://i.pinimg.com/originals/de/ac/9f/deac9f5cff04951294813862129c39f3.gif";
     resultArea.textContent = "이미 썼잖아~ 다른 숫자를 입력해봐!";
@@ -47,9 +54,10 @@ const play = () => {
   //5. 같은 숫자 쓰거나 범위 내의 숫자가 아니면 기회를 깎지 않음
 
   chanceNum--;
+  //play를 누를 수록 기회는 줄어듦
 
-  answerAll.push(inputValue);
   chanceArea.textContent = `으아아 ${chanceNum}번 남았다`;
+  //줄어든 기회 표기
 
   if (inputValue > answerNum) {
     resultArea.textContent = "좀 더 밑으로 생각해봐";
@@ -66,8 +74,12 @@ const play = () => {
     chanceNum = 7;
     chanceArea.textContent = "";
     gameOver = true;
+    //정답일 때 게임오버
   }
   //2. 랜덤 숫자를 입력한 후 playbtn 누르면 up down 정답 표시하기
+
+  answerAll.push(inputValue);
+  //적은 답안 배열에 저장
 
   if (chanceNum < 1) {
     gameOver = true;
@@ -79,43 +91,39 @@ const play = () => {
 
   if (gameOver) {
     playBtn.disabled = true;
+    playBtn.style.color = "#090909";
   } //4. 남은 기회 다 쓰면 버튼 사라지게
+  //게임 오버가 되면 정답 배열은 비워지고 playBtn은 비활성화됨
 };
 
 const reset = () => {
+  playBtn.disabled = false;
+  answerAll = [];
+  gameOver = false;
+
+  chanceArea.textContent = "";
+  numInput.value = "";
+  chanceNum = 7;
+  pickRandom();
+
   if (answerNum == numInput.value) {
-    numInput.value = "";
-    chanceArea.textContent = "";
-    chanceNum = 7;
-    pickRandom();
     resultArea.textContent = `토끼는 무슨 숫자를 생각 중일까?`;
-    chanceArea.textContent = "기회는 총 7번!";
     bunnyImage.src =
       "https://i.pinimg.com/originals/63/80/4c/63804c1e29b9bd807be9db3a539d5102.gif";
-    playBtn.disabled = false;
+    chanceArea.textContent = "기회는 총 7번!";
   } else {
-    chanceArea.textContent = "";
     bunnyImage.src =
       "https://i.pinimg.com/originals/0c/19/ae/0c19ae9544c73425bb8002406b97b9bb.gif";
     resultArea.textContent = `정답은 ${answerNum}이었다구~`;
     setTimeout(() => {
-      pickRandom();
       resultArea.textContent = `처음부터 다시 시작!`;
-      chanceArea.textContent = "기회는 총 7번!";
       bunnyImage.src =
         "https://i.pinimg.com/originals/63/80/4c/63804c1e29b9bd807be9db3a539d5102.gif";
-      playBtn.disabled = false;
+      chanceArea.textContent = "기회는 총 7번!";
     }, 3000);
   }
 };
 //3. 리셋 버튼 누르면 게임 다시 시작
-
-const enter = (event) => {
-  if (window.event.keyCode == 13) {
-    event.preventDefault();
-    play();
-  }
-};
 
 playBtn.addEventListener("click", play);
 resetBtn.addEventListener("click", reset);
