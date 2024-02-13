@@ -104,7 +104,6 @@ const reset = () => {
   chanceArea.textContent = "";
   numInput.value = "";
   chanceNum = 7;
-  pickRandom();
 
   if (answerNum == numInput.value) {
     resultArea.textContent = `토끼는 무슨 숫자를 생각 중일까?`;
@@ -122,6 +121,7 @@ const reset = () => {
       chanceArea.textContent = "기회는 총 7번!";
     }, 3000);
   }
+  pickRandom();
 };
 //3. 리셋 버튼 누르면 게임 다시 시작
 
